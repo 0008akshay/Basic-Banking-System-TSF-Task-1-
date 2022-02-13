@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block body %}
+    <!-- table  -->
+    <div style="background-color: azure;">
+        <h2 style="text-align: center;">Customers Details</h2>
+    </div>
+    <table id="example" class="table table-striped" style="width:95%;margin-left: 50px;">
+        <thead>
+            <tr>
+                <th>Acc. No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Amount</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer in allcustomers %}
+            <tr>
+                <td>{{ customer.acc_id }}</td>
+                <td>{{ customer.name }}</td>
+                <td>{{ customer.email }}</td>
+                <td>{{ customer.Balance }}</td>
+                <td>
+                    <a href="/view/{{customer.acc_id}}" type="button" class="btn btn-success">View</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+
+</body>
+
+</html>
+{% endblock body %}
